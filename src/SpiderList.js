@@ -18,7 +18,7 @@ class SpiderList extends Component {
   componentWillMount() {
     var ts = new Date().getTime();
     var hash = CryptoJS.MD5(ts + PRIVATE_KEY + PUBLIC_KEY).toString();
-    var urlKey = url + '?apikey=' + PUBLIC_KEY + '&hash=' + hash + '&ts=' + ts;
+    var urlKey = url + '?apikey=' + PUBLIC_KEY + '&hash=' + hash + '&ts=' + ts + '&characters=' + CHAR_ID;
 
     fetch(urlKey)
     .then( data => data.json() )
